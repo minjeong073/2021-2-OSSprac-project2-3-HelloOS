@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>login</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <script>
+                    alert("{{ message[-1] }}")
+                </script>
+            {% endif %}
+        {% endwith %}
+        
+        <form action = "" method = POST>
+            <d1>
+                <dt>ID :</dt>
+                    <dd>
+                        <input type = "text" name = "username" value = "{{ request.form.username }}">
+                    </dd>
+                <dt>PW :</dt>
+                    <dd>
+                        <input type = "password" name = "password">
+                    </dd>
+            </d1>
+            <p><input type = "submit" value = "Login"></p>
+            
+        </form>
+        
+    </body>
+</html>
