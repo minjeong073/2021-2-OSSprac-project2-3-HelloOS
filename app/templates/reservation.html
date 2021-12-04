@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
+        <title>OSSP_reservation</title>
+        <style>
+            * {
+                font-size: 20px;
+                font-family: Consolas, sans-serif;
+            }
+        </style>
+    </head>
+    <h1>OSSP Movie Reservation</h1><br>
+    <body>
+        <form action = "/submit" method = "POST">
+            <p>날짜 : <input type = "date" value = "2021-12-04" name = "Date" /></p>
+            <p>영화 : <br>
+                <label><input type="radio" name="Movie" value="듄"/>듄</label><br>
+                <label><input type="radio" name="Movie" value="엔칸토-마법의세계"/>엔칸토-마법의세계</label><br>
+                <label><input type="radio" name="Movie" value="유체이탈자"/>유체이탈자</label><br>
+                <label><input type="radio" name="Movie" value="고스트버스터즈 라이즈"/>고스트버스터즈 라이즈</label><br>
+                <label><input type="radio" name="Movie" value="라스트 나잇 인 소호"/>라스트 나잇 인 소호</label><br>
+            </p>
+            <p>시간 : <select>
+                <option value = "time">12:00</option>
+                <option value = "time">14:00</option>
+                <option value = "time">16:00</option>
+                <option value = "time">18:00</option>
+                <option value = "time">20:00</option>
+                <option value = "time">22:00</option>
+            </select></p>
+            <p>인원 : 
+                <label><input type="radio" name="Number" value="1"/>1</label>
+                <label><input type="radio" name="Number" value="2"/>2</label>
+                <label><input type="radio" name="Number" value="3"/>3</label>
+                <label><input type="radio" name="Number" value="4"/>4</label>
+            </p>
+            
+            <button onclick="location.href='/submit'">SUBMIT</button>
+        </form>
+      
+   </body>
+</html>
