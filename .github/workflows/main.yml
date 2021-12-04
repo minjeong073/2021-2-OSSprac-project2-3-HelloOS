@@ -5,9 +5,9 @@ on:
     branches: [ main ]
 
 env:
-  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/ossp_team_project_2    #생성할 이미지 명
+  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/ossp_team_project_test    #생성할 이미지 명
   VERSION: ${{ github.sha }}
-  NAME: ossprac_container2    #생성할 컨테이너 명
+  NAME: ossprac_container    #생성할 컨테이너 명
 
 jobs:
   build:
@@ -53,4 +53,4 @@ jobs:
       - name: Docker run
         run: |
           docker stop ${{ env.NAME }} && docker rm ${{ env.NAME }} && docker rmi ${{ env.DOCKER_IMAGE }}:latest
-          docker run -d -p 80:80 --name ossprac_container2 --restart always ${{ env.DOCKER_IMAGE }}:latest
+          docker run -d -p 80:80 --name ossprac_container --restart always ${{ env.DOCKER_IMAGE }}:latest
