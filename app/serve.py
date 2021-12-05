@@ -5,6 +5,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
+    return render_template('main.html')
+
+@app.route('/reservation', methods=['POST', 'GET']) 
+def reservation():
     return render_template('reservation.html')
 
 
@@ -17,6 +21,15 @@ def login():
         else:
             return render_template('reservation.html')
     return render_template('login.html', error=error)
+
+
+@app.route('/result', methods=['POST', 'GET'])
+def result():
+    Date = request.form.get('Date')
+    Movie = request.form.get('Movie')
+    time = request.form.get('time')
+    Number = request.form.get('Number')
+    return render_template('result.html', Date=Date, Movie=Movie,time=time, Number=Number)
 
 
 if __name__ == '__main__':
