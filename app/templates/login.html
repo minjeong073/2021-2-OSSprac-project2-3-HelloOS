@@ -4,7 +4,7 @@
 </head>
 <body>
     <h1>OSSP 계정 로그인</h1>
-        <form action="/reservation" method="POST">
+        <form action="" method="POST">
             <dl>
                 <dt>아이디:</dt>
                 <dd>
@@ -14,10 +14,9 @@
                 <dd><input type="password" name="password"></dd>
             </dl>
             <p><input type="submit" value="Login"></p>
-            <button onclick="location.href='/reservation'">SUBMIT</button>
         </form>
         {% if error %}
-            <p><strong>Error:</strong> {{ error }}
+            <p><strong style="color: red; font-size:20px;">Error: {{ error }}</strong>
         {% endif %}
 </body>
 </html>
