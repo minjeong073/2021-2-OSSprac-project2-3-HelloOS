@@ -16,8 +16,10 @@ def reservation():
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'ossp' or request.form['password'] != 'ossp1234':
-            error = 'Incorrect authentication credentails! Please try again'
+        if request.form['username'] != 'ossp':
+            error = 'Unknown username! Please try again'
+        elif request.form['password'] != 'ossp1234':
+            error = 'Incorrect password! Please try again'
         else:
             return render_template('reservation.html')
     return render_template('login.html', error=error)
